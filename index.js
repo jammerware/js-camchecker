@@ -10,7 +10,7 @@ function loadVideoDevices() {
                     videoDevices.push(device);
 
                     let option = document.createElement('option');
-                    option.text = device.deviceId;
+                    option.text = device.label || device.deviceId;
                     option.value = device.deviceId;
                     select.options.add(option)
                 }
