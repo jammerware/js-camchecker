@@ -1,14 +1,10 @@
 function loadVideoDevices() {
     navigator.mediaDevices.enumerateDevices()
         .then(function (devices) {
-            let videoDevices = [];
             let select = document.getElementsByTagName('select')[0];
 
             devices.forEach(function (device) {
                 if (device.kind === 'videoinput') {
-                    console.log(device.kind + ": " + device.label + " id = " + device.deviceId);
-                    videoDevices.push(device);
-
                     let option = document.createElement('option');
                     option.text = device.label || device.deviceId;
                     option.value = device.deviceId;
